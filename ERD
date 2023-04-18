@@ -1,0 +1,57 @@
+      +-------------+   +-------------+   +-----------+
+      |   artists   |   |    songs    |   |   genres  |
+      +-------------+   +-------------+   +-----------+
+      | artist_id   |   | song_id     |   | genre_id  |
+      | first_name  |   | title       |   | genre_name|
+      | last_name   |   | artist_id   |   +-----------+
+      | date_of_birth | | genre_id    |
+      +-------------+   | duration    |
+                        | explicit    |
+                        | cloud_link  |
+                        +-------------+
+                              |
+                              |
+                        +-----------+
+                        |   users   |
+                        +-----------+
+                        | user_id   |
+                        | email     |
+                        | first_name|
+                        | last_name |
+                        | password  |
+                        | account_type |
+                        +-----------+
+                              |
+                              |
+                        +-------------+
+                        |  favorites  |
+                        +-------------+
+                        | favorite_id|
+                        | user_id    |
+                        | song_id    |
+                        +-------------+
+                              |
+                              |
+                        +---------------+
+                        |   playlists   |
+                        +---------------+
+                        | playlist_id  |
+                        | user_id      |
+                        +---------------+
+                              |
+                              |
+                        +-----------------+
+                        | playlist_songs  |
+                        +-----------------+
+                        | playlist_id     |
+                        | song_id         |
+                        | orders          |
+                        +-----------------+
+                              |
+                              |
+                        +---------------+
+                        |   song_genres |
+                        +---------------+
+                        | song_id       |
+                        | genre_id      |
+                        +---------------+
