@@ -1,57 +1,57 @@
-      +-------------+   +-------------+   +-----------+
-      |   artists   |   |    songs    |   |   genres  |
-      +-------------+   +-------------+   +-----------+
-      | artist_id   |   | song_id     |   | genre_id  |
-      | first_name  |   | title       |   | genre_name|
-      | last_name   |   | artist_id   |   +-----------+
-      | date_of_birth | | genre_id    |
-      +-------------+   | duration    |
-                        | explicit    |
-                        | cloud_link  |
-                        +-------------+
-                              |
-                              |
-                        +-----------+
-                        |   users   |
-                        +-----------+
-                        | user_id   |
-                        | email     |
-                        | first_name|
-                        | last_name |
-                        | password  |
-                        | account_type |
-                        +-----------+
-                              |
-                              |
-                        +-------------+
-                        |  favorites  |
-                        +-------------+
-                        | favorite_id|
-                        | user_id    |
-                        | song_id    |
-                        +-------------+
-                              |
-                              |
-                        +---------------+
-                        |   playlists   |
-                        +---------------+
-                        | playlist_id  |
-                        | user_id      |
-                        +---------------+
-                              |
-                              |
-                        +-----------------+
-                        | playlist_songs  |
-                        +-----------------+
-                        | playlist_id     |
-                        | song_id         |
-                        | orders          |
-                        +-----------------+
-                              |
-                              |
-                        +---------------+
-                        |   song_genres |
-                        +---------------+
-                        | song_id       |
-                        | genre_id      |
-                        +---------------+
+PK means primary key
+FK means foreign key
+
++------------+       +------------+        +------------+
+|   songs    |       |   artists  |        |   genres   |
++------------+       +------------+        +------------+
+| PK song_id |       | PK artist_id|        | PK genre_id|
+| title      |       | first_name |        | genre_name |
+| artist_id  |       | last_name  |        +------------+
+| genre_id   |       | birth_date|    
+| duration   |    
+| explicit   |    
+| cloud_link |    
++------------+       
+
+    | FK artist_id
+    V
++------------+
+|   users    |
++------------+
+| PK user_id |
+| email      |
+| first_name|
+| last_name |
+| password  |
+| account_type|
++------------+
+
+    | FK user_id
+    V
++------------+
+|  favorites |
++------------+
+| PK favorite_id |
+| user_id    |
+| song_id    |
++------------+
+
+    | FK playlist_id
+    V
++--------------+       +--------------+
+|  playlists   |       | playlist_songs|
++--------------+       +--------------+
+| PK playlist_id |       | playlist_id  |
+| user_id      |       | song_id      |
++--------------+       | orders       |
+                        +--------------+
+
+    | FK genre_id
+    | FK song_id
+    V          V
++--------------+
+|  song_genres |
++--------------+
+| song_id      |
+| genre_id     |
++--------------+
